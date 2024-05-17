@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive website Landing Page | Traval</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css*">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Taravl</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="vid/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vid/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vid/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vid/4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vid/5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful.<br><span>Island</span></h1>
+            <p>A paradise nestled in azure waters, adorned with palm-fringed beaches, and surrounded by vibrant coral reefs. Its lush, verdant forests teem with exotic flora and fauna, inviting exploration and adventure. Rich in cultural heritage, the island resonates with the melodies of traditional music and the aromas of local cuisine. Warm-hearted locals welcome visitors with open arms, eager to share their traditions and stories. Whether relaxing on sun-kissed shores or diving into the depths of its crystal-clear waters, "Wonderful Island" offers an unforgettable escape into natural beauty and cultural richness.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Enjoy With.<br><span>Nature</span></h1>
+            <p>Beckons with its serene landscapes, from towering mountains to tranquil lakes and lush forests. Embrace the soothing embrace of nature's symphony, where birdsong harmonizes with rustling leaves, inviting peace and tranquility. Wander through verdant meadows adorned with vibrant wildflowers, or seek solace beneath the canopy of ancient trees. Let the gentle caress of a breeze and the warmth of sunlight rejuvenate your spirit. Whether hiking rugged trails or simply basking in nature's embrace, "Enjoy with Nature" offers a sanctuary for the soul to unwind and reconnect with the world around us.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Adventure.<br><span>Off Road</span></h1>
+            <p>Ignites the spirit of exploration with rugged terrain and untamed landscapes. Navigate through rugged trails, conquer steep inclines, and ford wild rivers in pursuit of adrenaline-fueled excitement. Embrace the thrill of off-road exploration as you traverse remote wilderness, encountering breathtaking vistas and hidden wonders along the way. Whether behind the wheel of a rugged 4x4 vehicle or atop an agile ATV, embark on a journey where every twist and turn reveals a new adventure. "Adventure Off Road" promises an exhilarating escape for thrill-seekers craving the untamed beauty of the great outdoors.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Road Trip.<br><span>Together</span></h1>
+            <p>Embark on a Road Trip adventure, where endless highways stretch across diverse landscapes, inviting exploration and discovery. From bustling cityscapes to quaint towns, each stop unveils its own charm and stories. Feel the wind in your hair as you cruise along scenic routes, passing through rolling hills, majestic mountains, and serene coastlines. With friends or solo, every mile brings new experiences, roadside attractions, and memories to treasure. Whether seeking adventure or simply enjoying the journey, a "Road Trip" promises freedom, spontaneity, and the thrill of the open road.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Feel Nature.<br><span>Relax</span></h1>
+            <p>Embraces the essence of tranquility and connection in the great outdoors. Amidst rustling leaves and birdsong, immerse yourself in the symphony of nature's rhythms. Breathe in the crisp air of mountain peaks, wander through sun-dappled forests, or stroll along secluded beaches. Let the earth beneath your feet ground you as you witness the beauty of sunrise over vast landscapes or sunset's gentle descent. In these moments, feel the embrace of nature's embrace, rejuvenating your spirit and nurturing your soul with its timeless wisdom and boundless wonder.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.png" alt="instagram"></a>
+            <a href="#"><img src="img/twitter.png" alt="twitter"></a>
+            <a href="#"><img src="img/youtube.png" alt="Youtube"></a>
+            
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        //javacript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active"); 
+            navigation.classList.toggle("active");
+        });
+
+        //javascript for vedio slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click",() => {
+                sliderNav(i);
+            })
+        })
+
+
+</script>
+                 
+</body>
+</html>
